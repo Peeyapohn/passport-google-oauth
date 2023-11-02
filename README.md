@@ -1,46 +1,75 @@
-# todos-express-starter
+# Node.js Passport.js Authentication 
 
-This is a starter kit for building a todo app with sign in functionality using
-[Express](https://expressjs.com/), [Passport](https://www.passportjs.org/) and
-[SQLite](https://www.sqlite.org/).
+This is a simple Node.js application that demonstrates user authentication with Passport.js using a SQLite database to store session data. It provides a basic structure to get started with user authentication in your Node.js web applications.
 
-The following is a list of complete, working example apps that have been built
-using this kit as a starting point.
+## Table of Contents
 
-* [todos-express-password](https://github.com/passport/todos-express-password)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+- [Routes](#routes)
+- [Error Handling](#error-handling)
+- [License](#license)
 
-  Illustrates how to sign in with a username and password.
+## Prerequisites
 
-* [todos-express-password-flash](https://github.com/passport/todos-express-password-flash)
+Before you begin, ensure you have the following installed:
 
-  Illustrates how to sign in with a username and password and use the flash for
-  informative messages.
+- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/): Make sure you have Node.js and npm installed on your system.
 
-* [todos-express-google](https://github.com/passport/todos-express-google)
+## Getting Started
 
-  Illustrates how to sign in with Google via OpenID Connect.
+1. Clone the repository to your local machine:
 
-* [todos-express-google-oauth2](https://github.com/passport/todos-express-google-oauth2)
+   ```bash
+   git clone <repository-url>
+   ```
 
-  Illustrates how to sign in with Google via OAuth 2.0.
+2. Navigate to the project directory:
 
-* [todos-express-email](https://github.com/passport/todos-express-email)
+   ```bash
+   cd <project-folder>
+   ```
 
-  Illustrates how to sign in with email via magic link.
+3. Install project dependencies:
 
-* [todos-express-auth0](https://github.com/passport/todos-express-auth0)
+   ```bash
+   npm install
+   ```
 
-  Illustrates how to implement sign in by integrating with Auth0 via OpenID Connect.
+4. Create a `.env` file in the project root and configure the environment variables. You can use the `.env.example` file as a template.
 
-* [todos-express-openidconnect](https://github.com/passport/todos-express-openidconnect)
+5. Start the application:
 
-  Illustrates how to implement sign in by integrating with an identity provider (IdP) via OpenID Connect.
+   ```bash
+   npm start
+   ```
 
-## License
+6. Open your web browser and visit `http://localhost:3000` to access the application.
 
-[The Unlicense](https://opensource.org/licenses/unlicense)
+## Project Structure
 
-## Credit
+The project structure is organized as follows:
 
-Created by [Jared Hanson](https://www.jaredhanson.me/)
-"# passport-google-oauth" 
+- `app.js`: The main entry point of the application.
+- `routes/`: Contains route definitions.
+- `views/`: Contains view templates using the EJS templating engine.
+- `public/`: Includes static assets like CSS, JavaScript, and images.
+- `var/db/`: The directory where the SQLite database for sessions is stored.
+- `.env.example`: An example environment variable configuration file.
+- `.gitignore`: Gitignore file to exclude sensitive files and folders.
+
+## Configuration
+
+You can configure the application by creating an `.env` file based on the provided `.env.example` template. Define environment variables in the `.env` file, such as the secret key and database configurations.
+
+## Routes
+
+The application has two main routes:
+
+- `/`: The main application route, which displays a welcome page.
+- `/auth`: Authentication routes for Passport.js, including login, logout, and Google OAuth.
+
+You can customize and expand the routes by adding new route files in the `routes/` directory.
+
